@@ -1,0 +1,36 @@
+# Core
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic[email]==2.10.4
+pydantic-settings==2.7.1
+
+# Database
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+alembic==1.14.1
+greenlet==3.1.1
+
+# Authentication
+python-jose[cryptography]==3.3.0
+authlib==1.4.1
+httpx==0.28.1
+itsdangerous==2.2.0
+
+# Background Jobs
+arq==0.26.1
+redis==5.2.1
+
+# Logging
+structlog==24.4.0
+
+# Rate Limiting
+# (using redis directly)
+
+# Testing
+pytest==8.3.4
+pytest-asyncio==0.25.0
+pytest-cov==6.0.0
+aiosqlite==0.20.0
+
+# Production
+gunicorn==23.0.0
