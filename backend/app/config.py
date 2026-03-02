@@ -24,9 +24,24 @@ class Settings(BaseSettings):
     def format_database_url(cls, v: Any) -> Any:
         if isinstance(v, str):
             if v.startswith("postgres://"):
-                return v.replace("postgres://", "postgresql+asyncpg://", 1)
-            if v.startswith("postgresql://"):
-                return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+                v = v.replace("postgres://", "postgresql+asyncpg://", 1)
+            elif v.startswith("postgresql://"):
+                v = v.replace("postgresql://", "postgresql+asyncpg://", 1)
+            
+            if "?" in v:
+                from urllib.parse import urlparse, urlunparse, parse_qsl, urlencode
+                parsed = urlparse(v)
+                query_params = dict(parse_qsl(parsed.query))
+                
+                if query_params.get("sslmode") == "require":
+                    query_params["ssl"] = "require"
+                
+                query_params.pop("sslmode", None)
+                query_params.pop("channel_binding", None)
+                query_params.pop("options", None)
+                
+                new_query = urlencode(query_params)
+                v = urlunparse(parsed._replace(query=new_query))
         return v
 
     # Redis
