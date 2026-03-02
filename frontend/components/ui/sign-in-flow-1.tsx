@@ -614,7 +614,7 @@ export const SignInPage = ({ className }: SignInPageProps) => {
 
                     <div className="space-y-4">
                       <a 
-                        href="http://localhost:8000/auth/google"
+                        href={`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/auth/google`}
                         className="backdrop-blur-[2px] w-full flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-full py-3 px-4 transition-colors"
                       >
                         <span className="text-lg">G</span>
@@ -658,7 +658,7 @@ export const SignInPage = ({ className }: SignInPageProps) => {
                       <div className="p-4 rounded-xl border border-white/10 bg-white/5 text-left space-y-2">
                         <p className="text-xs text-white/50 uppercase tracking-wider font-semibold">Demo Quick Start</p>
                         <p className="text-sm text-white/70">
-                          1. Run <code>curl -X POST http://localhost:8000/dev/seed</code>
+                          1. Run <code>curl -X POST {process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/dev/seed</code>
                         </p>
                         <p className="text-sm text-white/70">
                           2. Copy the <code className="text-green-400">access_token</code> from the response.

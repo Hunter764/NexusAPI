@@ -37,6 +37,7 @@ type Job = {
 };
 
 export default function Dashboard() {
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
   const [credits, setCredits] = useState<number | null>(null);
   const [transactions, setTransactions] = useState<Transaction[]>([]);
   const [textToAnalyse, setTextToAnalyse] = useState("");
@@ -50,7 +51,7 @@ export default function Dashboard() {
   const [activeSidebarTab, setActiveSidebarTab] = useState<'ledger' | 'jobs'>('ledger');
 
   const fetchCreditsAndTxns = (t: string) => {
-    fetch("http://localhost:8000/credits/balance", {
+    fetch(`${API_URL}/credits/balance`, {
       headers: { Authorization: `Bearer ${t}` },
     })
       .then((res) => {
@@ -79,7 +80,7 @@ export default function Dashboard() {
     }
 
     // Fetch user profile
-    fetch("http://localhost:8000/me", {
+    fetch(`${API_URL}/me`, {
       headers: { Authorization: `Bearer ${t}` },
     })
       .then((res) => {
@@ -124,7 +125,7 @@ export default function Dashboard() {
     if (activeJobId) {
       interval = setInterval(() => {
         const t = localStorage.getItem("nexus_token");
-        fetch(`http://localhost:8000/api/jobs/${activeJobId}`, {
+        fetch(`${API_URL}/api/jobs/${activeJobId}`, {
           headers: { Authorization: `Bearer ${t}` }
         })
         .then(r => r.json())
@@ -178,7 +179,7 @@ export default function Dashboard() {
     const endpoint = apiMode === 'analyse' ? '/api/analyse' : '/api/summarise';
     
     try {
-      const res = await fetch(`http://localhost:8000${endpoint}`, {
+      const res = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
