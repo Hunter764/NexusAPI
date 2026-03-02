@@ -4,9 +4,10 @@ Loads all settings from environment variables using pydantic-settings.
 """
 
 from functools import lru_cache
+from typing import Any
 
 from pydantic_settings import BaseSettings
-from pydantic import Field
+from pydantic import Field, field_validator
 
 
 class Settings(BaseSettings):
@@ -17,6 +18,16 @@ class Settings(BaseSettings):
         default="postgresql+asyncpg://nexus:nexus_secret@localhost:5432/nexusapi",
         description="PostgreSQL async connection string",
     )
+
+    @field_validator("DATABASE_URL", mode="before")
+    @classmethod
+    def format_database_url(cls, v: Any) -> Any:
+        if isinstance(v, str):
+            if v.startswith("postgres://"):
+                return v.replace("postgres://", "postgresql+asyncpg://", 1)
+            if v.startswith("postgresql://"):
+                return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return v
 
     # Redis
     REDIS_URL: str = Field(
