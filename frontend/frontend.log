@@ -1,0 +1,49 @@
+
+> frontend@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/abhyudaya/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/abhyudaya/Desktop/NexusAPI/frontend/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.108.168.35:3000
+
+✓ Starting...
+✓ Ready in 751ms
+ GET /demo 200 in 1552ms (compile: 1314ms, render: 238ms)
+ GET /dashboard 200 in 423ms (compile: 292ms, render: 131ms)
+ GET /dashboard 200 in 110ms (compile: 50ms, render: 60ms)
+ GET /demo 200 in 140ms (compile: 43ms, render: 97ms)
+ GET /dashboard 200 in 88ms (compile: 32ms, render: 56ms)
+ GET /dashboard 200 in 138ms (compile: 33ms, render: 105ms)
+✓ Compiled in 900ms
+ GET /demo 200 in 80ms (compile: 31ms, render: 49ms)
+ GET /dashboard 200 in 326ms (compile: 165ms, render: 161ms)
+ GET /dashboard 200 in 102ms (compile: 48ms, render: 54ms)
+✓ Compiled in 1045ms
+ GET /demo 200 in 167ms (compile: 51ms, render: 116ms)
+ GET /dashboard 200 in 369ms (compile: 167ms, render: 202ms)
+ GET /dashboard 200 in 143ms (compile: 63ms, render: 79ms)
+✓ Compiled in 642ms
+ GET /demo 200 in 93ms (compile: 22ms, render: 71ms)
+ GET /dashboard 200 in 441ms (compile: 213ms, render: 228ms)
+ GET /dashboard 200 in 104ms (compile: 50ms, render: 54ms)
+ GET /demo 200 in 179ms (compile: 67ms, render: 112ms)
+ GET /dashboard 200 in 109ms (compile: 46ms, render: 63ms)
+ GET /demo 200 in 103ms (compile: 39ms, render: 64ms)
+ GET /dashboard 200 in 180ms (compile: 87ms, render: 93ms)
+ GET /dashboard 200 in 149ms (compile: 48ms, render: 101ms)
+ GET /dashboard 200 in 154ms (compile: 52ms, render: 102ms)
+ GET /demo 200 in 134ms (compile: 44ms, render: 91ms)
+ GET /dashboard 200 in 1653ms (compile: 250ms, render: 1403ms)
+ GET /demo 200 in 178ms (compile: 75ms, render: 103ms)
+ GET /dashboard 200 in 386ms (compile: 114ms, render: 272ms)
+ GET /dashboard 200 in 131ms (compile: 53ms, render: 78ms)
+ GET /demo 200 in 87ms (compile: 39ms, render: 48ms)
+ GET /demo 200 in 50ms (compile: 13ms, render: 37ms)
+ GET /demo 200 in 268ms (compile: 126ms, render: 142ms)
