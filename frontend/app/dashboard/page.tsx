@@ -75,7 +75,7 @@ export default function Dashboard() {
   useEffect(() => {
     const t = localStorage.getItem("nexus_token");
     if (!t) {
-      window.location.href = "/demo";
+      window.location.href = "/";
       return;
     }
 
@@ -91,7 +91,7 @@ export default function Dashboard() {
       .catch((err) => {
         console.error("Auth fetch error:", err);
         localStorage.removeItem("nexus_token");
-        window.location.href = "/demo";
+        window.location.href = "/";
       });
 
     fetchCreditsAndTxns(t);
@@ -260,7 +260,7 @@ export default function Dashboard() {
           <button 
             onClick={() => {
               localStorage.removeItem("nexus_token");
-              window.location.href = '/demo';
+              window.location.href = '/';
             }}
             className="flex items-center gap-2 px-4 py-2 text-sm text-white/70 hover:text-white bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all"
           >

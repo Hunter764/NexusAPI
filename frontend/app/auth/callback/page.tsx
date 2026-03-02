@@ -18,8 +18,8 @@ function AuthCallbackContent() {
       // Redirect to the dashboard
       router.push("/dashboard");
     } else {
-      // If no token, bounce back to demo/login
-      router.push("/demo");
+      // If no token, bounce back to index/login
+      router.push("/");
     }
   }, [router, searchParams]);
 
